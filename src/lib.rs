@@ -1,14 +1,9 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
+pub mod compiler;
+pub mod transpiler;
 
-#[cfg(test)]
-mod tests {
+pub mod prelude {
     use super::*;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+    pub use compiler::*;
+    pub use transpiler::*;
 }
